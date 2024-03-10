@@ -42,6 +42,26 @@ to_camel_case() {
     echo "$camel"
 }
 
+pascal_to_spaced() {
+  local input="$1"
+  local output=""
+  local prev_char=""
+
+  for ((i = 0; i < ${#input}; i++)); do
+    local char="${input:$i:1}"
+
+    if [ "$prev_char" != "" ] && [[ "$char" =~ ^[A-Z]$ ]] && [[ "$prev_char" =~ ^[a-z]$ ]]; then
+      output+=" "
+    fi
+
+    output+="$char"
+    prev_char="$char"
+  done
+
+  echo "$output"
+}
+
+
 # Check if file exists
 file_exists() {
   [ -f "$1" ] && return 0 || return 1
@@ -121,7 +141,7 @@ tester.run(RULE_NAME, ${CAMEL_RULE_NAME}, {
 
 EOF
 
-RULE_NAME_WITH_SPACES=$(echo "${PASCAL_RULE_NAME}" | sed -r 's/(?<=[a-z])([A-Z])/ \1/g')
+RULE_NAME_WITH_SPACES=$(pascal_to_spaced "${PASCAL_RULE_NAME}")
 
 cat << EOF > "src/rules/${RULE_NAME}.md"
 # ${RULE_NAME_WITH_SPACES}
