@@ -6,23 +6,23 @@ This ESLint rule disallows the use of `switch` statements with less than 3 cases
 
 ```js
 // ❌ Incorrect
-const variable = "bar";
+const variable = 'bar'
 
 switch (variable) {
-  case "foo":
+  case 'foo':
     // ...
-    break;
+    break
   default:
     // ...
-    break;
+    break
 }
 ```
 
 ```js
 // ✅ Correct
 
-const variable = "bar";
-if (variable === "foo") {
+const variable = 'bar'
+if (variable === 'foo') {
   // ...
 } else {
   // ...

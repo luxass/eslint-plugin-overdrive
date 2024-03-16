@@ -15,7 +15,7 @@ npm install -D eslint eslint-plugin-overdrive
 
 ```js
 // eslint.config.js
-import pluginOverdrive from "eslint-plugin-overdrive";
+import pluginOverdrive from 'eslint-plugin-overdrive'
 
 export default [
   {
@@ -23,10 +23,10 @@ export default [
       overdrive: pluginOverdrive
     },
     rules: {
-      "overdrive/no-small-switch": "error",
+      'overdrive/no-small-switch': 'error',
     }
   }
-];
+]
 ```
 
 ## 📄 License
