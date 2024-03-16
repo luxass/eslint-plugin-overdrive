@@ -1,13 +1,16 @@
 import type { ESLint, Linter } from "eslint";
 import { version } from "../package.json";
 
+import noSmallSwitch, { RULE_NAME as NoSmallSwitchName } from "./rules/no-small-switch";
+
 const plugin = {
   meta: {
     name: "overdrive",
     version,
   },
   rules: {
-
+    // @ts-expect-error aaa
+    [NoSmallSwitchName]: noSmallSwitch,
   },
 } satisfies ESLint.Plugin;
 
