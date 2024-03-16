@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-overdrive",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "A collection of ESLint rules",
   "type": "module",
   "author": {
@@ -16,10 +16,12 @@
   },
   "keywords": [
     "eslint",
-    "eslintconfig",
-    "config",
+    "eslintplugin",
+    "plugin",
     "linting",
-    "eslint-config"
+    "eslint-plugin",
+    "rules",
+    "eslint-rules"
   ],
   "sideEffects": false,
   "exports": {
