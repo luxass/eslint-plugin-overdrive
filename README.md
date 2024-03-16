@@ -23,7 +23,7 @@ export default [
       overdrive: pluginOverdrive
     },
     rules: {
-      "overdrive/no-only-tests": "error",
+      "overdrive/no-small-switch": "error",
     }
   }
 ];
