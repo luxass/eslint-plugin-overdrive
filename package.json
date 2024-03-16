@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-overdrive",
-  "version": "4.2.6",
+  "version": "0.0.1",
   "description": "A collection of ESLint rules",
   "type": "module",
   "author": {
