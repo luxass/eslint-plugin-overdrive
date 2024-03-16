@@ -12,4 +12,5 @@ export default defineConfig({
       js: ctx.format === "cjs" ? ".cjs" : ".mjs",
     };
   },
+  external: ["@typescript-eslint/utils"],
 });
