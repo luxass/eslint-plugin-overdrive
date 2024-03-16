@@ -9,7 +9,7 @@ const plugin = {
     version,
   },
   rules: {
-    // @ts-expect-error aaa
+    // @ts-expect-error - typescript is just not smart enough...
     [NoSmallSwitchName]: noSmallSwitch,
   },
 } satisfies ESLint.Plugin
