@@ -55,7 +55,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "eslint": "*"
+    "eslint": ">=8.40.0"
   },
   "devDependencies": {
     "@luxass/eslint-config": "^4.2.11",
