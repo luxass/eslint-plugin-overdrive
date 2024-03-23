@@ -1,7 +1,9 @@
-import { ESLintUtils } from '@typescript-eslint/utils'
+import type { ESLintUtils } from '@typescript-eslint/utils'
+
+import {
+  createESLintRuleBuilder,
+} from '@luxass/eslint-utils'
 
 export type { ESLintUtils }
 
-export const createEslintRule = ESLintUtils.RuleCreator(
-  (ruleName) => `https://github.com/luxass/eslint-plugin-overdrive/blob/main/src/rules/${ruleName}.md`,
-)
+export const createEslintRule = createESLintRuleBuilder('https://github.com/luxass/eslint-plugin-overdrive/blob/main/src/rules/$RULE_NAME.md')
