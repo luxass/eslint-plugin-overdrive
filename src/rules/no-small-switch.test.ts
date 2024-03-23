@@ -5,10 +5,14 @@ const tester = new RuleTester({
   parser: '@typescript-eslint/parser',
 })
 
-tester.run(RULE_NAME, NoSmallSwitch, {
+tester.run(RULE_NAME, NoSmallSwitch as any, {
   valid: [
-    { code: 'switch (a) { case 1: case 2: break; default: doSomething(); break; }' },
-    { code: 'switch (a) { case 1: break; default: doSomething(); break; case 2: }' },
+    {
+      code: 'switch (a) { case 1: case 2: break; default: doSomething(); break; }',
+    },
+    {
+      code: 'switch (a) { case 1: break; default: doSomething(); break; case 2: }',
+    },
     { code: 'switch (a) { case 1: break; case 2: }' },
   ],
   invalid: [

@@ -15,7 +15,8 @@ export default createEslintRule<Options, MessageIds>({
       recommended: 'strict',
     },
     messages: {
-      'small-switch': 'Your switch statement is too small. Consider using an if statement instead.',
+      'small-switch':
+        'Your switch statement is too small. Consider using an if statement instead.',
     },
     schema: [],
   },
