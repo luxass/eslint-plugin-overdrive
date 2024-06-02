@@ -48,6 +48,7 @@
   },
   "scripts": {
     "build": "tsup",
+    "prepublishOnly": "pnpm build",
     "dev": "tsup --watch",
     "lint": "eslint . --report-unused-disable-directives",
     "test": "vitest --run",
