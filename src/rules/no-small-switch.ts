@@ -2,37 +2,54 @@ import { createEslintRule } from '../utils'
 
 export const RULE_NAME = 'no-small-switch'
 
-export type Options = []
+export type Options = [{
+  maxCases?: number
+}]
 
-export type MessageIds = 'small-switch'
+export type MessageIds = 'noSmallSwitch'
 
 export default createEslintRule<Options, MessageIds>({
   name: RULE_NAME,
   meta: {
-    type: 'suggestion',
+    type: 'problem',
     docs: {
       description: 'Disallow the use of small switch statements',
       recommended: 'strict',
     },
     messages: {
-      'small-switch':
+      noSmallSwitch:
         'Your switch statement is too small. Consider using an if statement instead.',
     },
-    schema: [],
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          maxCases: {
+            type: 'integer',
+            minimum: 2,
+            default: 2,
+          },
+        },
+        additionalProperties: false,
+      },
+    ],
   },
-  defaultOptions: [],
+  defaultOptions: [{}],
   create(context) {
+    const {
+      maxCases = 2,
+    } = context.options[0]
     return {
       SwitchStatement(node) {
         const hasDefault = node.cases.find((c) => c.test === null)
 
-        if (node.cases.length < 2 || (node.cases.length === 2 && hasDefault)) {
+        if (node.cases.length < maxCases || (node.cases.length === maxCases && hasDefault)) {
           const firstToken = context.sourceCode.getFirstToken(node)
           if (!firstToken) return
 
           context.report({
             node,
-            messageId: 'small-switch',
+            messageId: 'noSmallSwitch',
             loc: firstToken.loc,
           })
         }
