@@ -3,7 +3,7 @@ import { createEslintRule } from '../utils'
 export const RULE_NAME = 'no-small-switch'
 
 export type Options = [{
-  maxCases?: number
+  minimumCases?: number
 }]
 
 export type MessageIds = 'noSmallSwitch'
@@ -24,7 +24,7 @@ export default createEslintRule<Options, MessageIds>({
       {
         type: 'object',
         properties: {
-          maxCases: {
+          minimumCases: {
             type: 'integer',
             minimum: 2,
             default: 2,
@@ -37,13 +37,13 @@ export default createEslintRule<Options, MessageIds>({
   defaultOptions: [{}],
   create(context) {
     const {
-      maxCases = 2,
-    } = context.options[0]
+      minimumCases = 2,
+    } = context.options?.[0] ?? {}
     return {
       SwitchStatement(node) {
         const hasDefault = node.cases.find((c) => c.test === null)
 
-        if (node.cases.length < maxCases || (node.cases.length === maxCases && hasDefault)) {
+        if (node.cases.length < minimumCases || (node.cases.length === minimumCases && hasDefault)) {
           const firstToken = context.sourceCode.getFirstToken(node)
           if (!firstToken) return
 

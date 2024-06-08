@@ -2,6 +2,7 @@ import type { ESLint, Linter } from 'eslint'
 import { version } from '../package.json'
 
 import noSmallSwitch, { RULE_NAME as NoSmallSwitchName } from './rules/no-small-switch'
+import preferDirectReturn, { RULE_NAME as PreferDirectReturn } from './rules/prefer-direct-return'
 
 const plugin = {
   meta: {
@@ -10,6 +11,7 @@ const plugin = {
   },
   rules: {
     [NoSmallSwitchName]: noSmallSwitch,
+    [PreferDirectReturn]: preferDirectReturn,
   },
 } satisfies ESLint.Plugin
 
