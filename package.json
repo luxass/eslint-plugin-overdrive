@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@luxass/eslint-config": "^4.5.0",
-    "@luxass/eslint-utils": "^0.0.6",
+    "@luxass/eslint-utils": "^0.1.0",
     "@types/node": "^20.14.9",
     "@typescript-eslint/rule-tester": "^7.12.0",
     "@typescript-eslint/utils": "^7.12.0",

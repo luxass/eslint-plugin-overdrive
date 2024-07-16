@@ -12,8 +12,8 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(@vue/compiler-sfc@3.4.21)(eslint@9.4.0)(typescript@5.5.3)(vitest@1.6.0(@types/node@20.14.9))
       '@luxass/eslint-utils':
-        specifier: ^0.0.6
-        version: 0.0.6(eslint@9.4.0)
+        specifier: ^0.1.0
+        version: 0.1.0(eslint@9.4.0)
       '@types/node':
         specifier: ^20.14.9
         version: 20.14.9
@@ -477,8 +477,8 @@ packages:
       svelte-eslint-parser:
         optional: true
 
-  '@luxass/eslint-utils@0.0.6':
-    resolution: {integrity: sha512-IfISBz6duQIP3KfdY1V44hRyLwZfvs0pWayRnUq49FhpAdxz5ltd9ctx2cvkdSG/sa4CYW4aHF2RTJBF+rzdhQ==}
+  '@luxass/eslint-utils@0.1.0':
+    resolution: {integrity: sha512-27k6weyjL4rVUMsvjir5wrRbW3ZiLt9y6BPAMM0HtfRx3Wl43C1noNbRhu4qw4XIsUBSpzSNp86qQ9r04mtV1A==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -2441,7 +2441,7 @@ snapshots:
       - typescript
       - vitest
 
-  '@luxass/eslint-utils@0.0.6(eslint@9.4.0)':
+  '@luxass/eslint-utils@0.1.0(eslint@9.4.0)':
     dependencies:
       eslint: 9.4.0
 
