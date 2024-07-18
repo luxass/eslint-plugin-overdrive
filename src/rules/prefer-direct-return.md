@@ -7,14 +7,14 @@ This ESLint rule enforces the use of direct return in functions. Instead of crea
 ```js
 // ❌ Incorrect
 function square(n) {
-  const result = n * n
-  return result
+  const result = n * n;
+  return result;
 }
 ```
 
 ```js
 // ✅ Correct
 function square(n) {
-  return n * n
+  return n * n;
 }
 ```

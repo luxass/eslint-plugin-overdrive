@@ -1,11 +1,11 @@
-import type { InvalidTestCase, ValidTestCase } from 'eslint-vitest-rule-tester'
-import { unindent as $ } from 'eslint-vitest-rule-tester'
-import noSmallSwitch, { RULE_NAME } from './no-small-switch'
-import { test } from './_test'
+import type { InvalidTestCase, ValidTestCase } from "eslint-vitest-rule-tester";
+import { unindent as $ } from "eslint-vitest-rule-tester";
+import noSmallSwitch, { RULE_NAME } from "./no-small-switch";
+import { test } from "./_test";
 
 const valids: ValidTestCase[] = [
   {
-    description: 'using default options',
+    description: "using default options",
     code: $`
       switch (a) {
         case 1:
@@ -18,7 +18,7 @@ const valids: ValidTestCase[] = [
     `,
   },
   {
-    description: 'with options (minimumCases: 3)',
+    description: "with options (minimumCases: 3)",
     code: $`
       switch (a) {
         case 1:
@@ -35,11 +35,11 @@ const valids: ValidTestCase[] = [
       minimumCases: 3,
     }],
   },
-]
+];
 
 const invalids: InvalidTestCase[] = [
   {
-    description: 'using default options',
+    description: "using default options",
     code: $`
       switch (a) {
         case 1:
@@ -49,10 +49,10 @@ const invalids: InvalidTestCase[] = [
           doSomething();
       }
     `,
-    errors: [{ messageId: 'noSmallSwitch' }],
+    errors: [{ messageId: "noSmallSwitch" }],
   },
   {
-    description: 'set max cases to 6',
+    description: "set max cases to 6",
     code: $`
       switch (a) {
         case 1:
@@ -68,13 +68,13 @@ const invalids: InvalidTestCase[] = [
     options: [{
       minimumCases: 6,
     }],
-    errors: [{ messageId: 'noSmallSwitch' }],
+    errors: [{ messageId: "noSmallSwitch" }],
   },
-]
+];
 
 test({
   name: RULE_NAME,
   rule: noSmallSwitch,
   valid: valids,
   invalid: invalids,
-})
+});

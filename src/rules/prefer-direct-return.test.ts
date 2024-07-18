@@ -1,11 +1,11 @@
-import type { InvalidTestCase, ValidTestCase } from 'eslint-vitest-rule-tester'
-import { unindent as $ } from 'eslint-vitest-rule-tester'
-import preferDirectReturn, { RULE_NAME } from './prefer-direct-return'
-import { test } from './_test'
+import type { InvalidTestCase, ValidTestCase } from "eslint-vitest-rule-tester";
+import { unindent as $ } from "eslint-vitest-rule-tester";
+import preferDirectReturn, { RULE_NAME } from "./prefer-direct-return";
+import { test } from "./_test";
 
 const valids: ValidTestCase[] = [
   {
-    description: 'throw statement',
+    description: "throw statement",
     code: $`
       function thrown_ok() {
         throw new Error();
@@ -13,7 +13,7 @@ const valids: ValidTestCase[] = [
     `,
   },
   {
-    description: 'throw statement with expression',
+    description: "throw statement with expression",
     code: $`
       function thrown_expression() {
         const x = new Error();
@@ -22,7 +22,7 @@ const valids: ValidTestCase[] = [
     `,
   },
   {
-    description: 'throw statement with different variable',
+    description: "throw statement with different variable",
     code: $`
       function thrown_different_variable(y) {
         const x = new Error();
@@ -31,7 +31,7 @@ const valids: ValidTestCase[] = [
     `,
   },
   {
-    description: 'return statement',
+    description: "return statement",
     code: $`
       function code_between_declaration_and_return() {
         let x = 42;
@@ -41,7 +41,7 @@ const valids: ValidTestCase[] = [
     `,
   },
   {
-    description: 'return statement with expression',
+    description: "return statement with expression",
     code: $`
       function return_expression() {
         let x = 42;
@@ -150,7 +150,7 @@ const valids: ValidTestCase[] = [
       }
     `,
   },
-]
+];
 
 const invalids: InvalidTestCase[] = [
   {
@@ -160,7 +160,7 @@ const invalids: InvalidTestCase[] = [
         return x;
       }`,
     errors: [{
-      messageId: 'preferDirectReturn',
+      messageId: "preferDirectReturn",
     }],
     output: `
       function returnConstVariable() {
@@ -175,7 +175,7 @@ const invalids: InvalidTestCase[] = [
       }
     `,
     errors: [{
-      messageId: 'preferDirectReturn',
+      messageId: "preferDirectReturn",
     }],
     output: `
       function returnLetVariable() {
@@ -192,7 +192,7 @@ const invalids: InvalidTestCase[] = [
       }
     `,
     errors: [{
-      messageId: 'preferDirectReturn',
+      messageId: "preferDirectReturn",
     }],
     output: `
       function callFNBeforeVariableDeclaration() {
@@ -208,7 +208,7 @@ const invalids: InvalidTestCase[] = [
         throw x;
       }`,
     errors: [{
-      messageId: 'preferDirectReturn',
+      messageId: "preferDirectReturn",
     }],
     output: `
       function throwVariable() {
@@ -237,16 +237,16 @@ const invalids: InvalidTestCase[] = [
     `,
     errors: [
       {
-        messageId: 'preferDirectReturn',
+        messageId: "preferDirectReturn",
       },
       {
-        messageId: 'preferDirectReturn',
+        messageId: "preferDirectReturn",
       },
       {
-        messageId: 'preferDirectReturn',
+        messageId: "preferDirectReturn",
       },
       {
-        messageId: 'preferDirectReturn',
+        messageId: "preferDirectReturn",
       },
     ],
     output: `
@@ -278,7 +278,7 @@ const invalids: InvalidTestCase[] = [
       }
     `,
     errors: [{
-      messageId: 'preferDirectReturn',
+      messageId: "preferDirectReturn",
     }],
     output: `
       function two_declarations(a) {
@@ -307,7 +307,7 @@ const invalids: InvalidTestCase[] = [
       }
     `,
     errors: [{
-      messageId: 'preferDirectReturn',
+      messageId: "preferDirectReturn",
     }],
     output: `
       function homonymous_is_used() {
@@ -338,10 +338,10 @@ const invalids: InvalidTestCase[] = [
     `,
     errors: [
       {
-        messageId: 'preferDirectReturn',
+        messageId: "preferDirectReturn",
       },
       {
-        messageId: 'preferDirectReturn',
+        messageId: "preferDirectReturn",
       },
     ],
     output: `
@@ -366,7 +366,7 @@ const invalids: InvalidTestCase[] = [
     }
     `,
     errors: [{
-      messageId: 'preferDirectReturn',
+      messageId: "preferDirectReturn",
     }],
     output: `
     function foo() {
@@ -386,7 +386,7 @@ const invalids: InvalidTestCase[] = [
         // comment3
       }`,
     errors: [{
-      messageId: 'preferDirectReturn',
+      messageId: "preferDirectReturn",
     }],
     output: `
       function var_returned() {
@@ -397,11 +397,11 @@ const invalids: InvalidTestCase[] = [
         // comment3
       }`,
   },
-]
+];
 
 test({
   name: RULE_NAME,
   rule: preferDirectReturn,
   valid: valids,
   invalid: invalids,
-})
+});
