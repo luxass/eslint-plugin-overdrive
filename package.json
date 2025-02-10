@@ -68,6 +68,6 @@
     "eslint-vitest-rule-tester": "^0.6.0",
     "tsup": "^8.1.0",
     "typescript": "^5.5.2",
-    "vitest": "^2.0.0"
+    "vitest": "^3.0.0"
   }
 }
