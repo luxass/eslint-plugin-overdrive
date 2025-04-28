@@ -14,7 +14,6 @@ export default createEslintRule<Options, MessageIds>({
     type: "problem",
     docs: {
       description: "Disallow the use of small switch statements",
-      recommended: "strict",
     },
     messages: {
       noSmallSwitch:

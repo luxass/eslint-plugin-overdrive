@@ -1,7 +1,7 @@
 import type { InvalidTestCase, ValidTestCase } from "eslint-vitest-rule-tester";
 import { unindent as $ } from "eslint-vitest-rule-tester";
-import preferDirectReturn, { RULE_NAME } from "./prefer-direct-return";
 import { test } from "./_test";
+import preferDirectReturn, { RULE_NAME } from "./prefer-direct-return";
 
 const valids: ValidTestCase[] = [
   {

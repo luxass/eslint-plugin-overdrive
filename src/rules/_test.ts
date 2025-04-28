@@ -1,5 +1,5 @@
-import tsParser from "@typescript-eslint/parser";
 import type { RuleTesterInitOptions, TestCasesOptions } from "eslint-vitest-rule-tester";
+import tsParser from "@typescript-eslint/parser";
 import { run } from "eslint-vitest-rule-tester";
 
 export function test(options: TestCasesOptions & RuleTesterInitOptions) {

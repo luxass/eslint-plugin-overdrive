@@ -1,7 +1,7 @@
 import type { InvalidTestCase, ValidTestCase } from "eslint-vitest-rule-tester";
 import { unindent as $ } from "eslint-vitest-rule-tester";
-import noSmallSwitch, { RULE_NAME } from "./no-small-switch";
 import { test } from "./_test";
+import noSmallSwitch, { RULE_NAME } from "./no-small-switch";
 
 const valids: ValidTestCase[] = [
   {

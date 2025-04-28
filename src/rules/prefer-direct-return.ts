@@ -1,10 +1,10 @@
 import type { TSESTree } from "@typescript-eslint/utils";
+import { isReturnStatement } from "@luxass/eslint-utils/predicates";
 import {
   getDeclaredVariable,
   getDeclaredVariables,
   getReturnedVariable,
 } from "@luxass/eslint-utils/variables";
-import { isReturnStatement } from "@luxass/eslint-utils/predicates";
 import { createEslintRule } from "../utils";
 
 export type Options = [];
@@ -19,7 +19,6 @@ export default createEslintRule<Options, MessageIds>({
     docs: {
       description:
         "Local variables should not be declared and then immediately returned or thrown",
-      recommended: "recommended",
     },
     messages: {
       preferDirectReturn:
