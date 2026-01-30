@@ -59,16 +59,16 @@
     "eslint": ">=8.40.0"
   },
   "devDependencies": {
-    "@luxass/eslint-config": "^4.18.1",
-    "@luxass/eslint-utils": "^0.1.1",
-    "@types/node": "^22.0.0",
+    "@luxass/eslint-config": "4.19.0",
+    "@luxass/eslint-utils": "0.1.1",
+    "@types/node": "22.16.0",
     "@typescript-eslint/parser": "^8.31.0",
     "@typescript-eslint/rule-tester": "^8.31.0",
     "@typescript-eslint/utils": "^8.31.0",
     "eslint": "^9.25.1",
     "eslint-vitest-rule-tester": "^2.2.0",
-    "tsup": "^8.4.0",
-    "typescript": "^5.8.3",
+    "tsup": "8.5.0",
+    "typescript": "5.8.3",
     "vitest": "^3.1.2"
   }
 }
