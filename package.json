@@ -67,7 +67,7 @@
     "@typescript-eslint/utils": "^8.31.0",
     "eslint": "^9.25.1",
     "eslint-vitest-rule-tester": "^2.2.0",
-    "tsup": "^8.4.0",
+    "tsup": "^9.0.0",
     "typescript": "^5.8.3",
     "vitest": "^3.1.2"
   }
